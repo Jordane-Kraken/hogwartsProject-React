@@ -1,0 +1,13 @@
+@use '../../styles/vars';
+
+.nav {
+    background: linear-gradient(rgb(189, 177, 177), white);
+    opacity: 0.7;
+    border-radius: 1em;
+    margin: vars.$gutter;
+    &__item {
+      font-size: 1.7em;
+    }
+}
+
+
