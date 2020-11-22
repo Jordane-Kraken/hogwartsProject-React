@@ -26,18 +26,17 @@ const MainCharacters = ({ mainCharacters, launchFetchMainCharacters }) => {
             </Card.Text>
           </Card.Body>
         </Card>
-        ))}
-    </div>    
-  
+      ))}
+    </div>
   );
 };
-/*
-Home.propTypes = {
-  recipes: PropTypes.arrayOf( // un tableau de...
+
+MainCharacters.propTypes = {
+  mainCharacters: PropTypes.arrayOf( // un tableau de...
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-};*/
+};
 
 export default MainCharacters;
