@@ -14,9 +14,9 @@ const Header = () => (
     <Container>
       <img src={choixPeau} alt="choixPeau" className="nav__img" />
       <Link to="/"><Navbar.Brand className="nav__item">Home</Navbar.Brand></Link>
-      <Link to="/parcours"><Navbar.Brand className="nav__item">Main Characters</Navbar.Brand></Link>
-      <Link to="/cv"><Navbar.Brand className="nav__item">Houses</Navbar.Brand></Link>
-      <Link to="/portfolio"><Navbar.Brand className="nav__item">Spells</Navbar.Brand></Link>
+      <Link to="/mainCharacters"><Navbar.Brand className="nav__item">Main Characters</Navbar.Brand></Link>
+      <Link to="/houses"><Navbar.Brand className="nav__item">Houses</Navbar.Brand></Link>
+      <Link to="/spells"><Navbar.Brand className="nav__item">Spells</Navbar.Brand></Link>
     </Container>
   </Navbar>
 );
