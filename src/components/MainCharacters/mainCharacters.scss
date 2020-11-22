@@ -1,0 +1,30 @@
+@use '../../styles/vars';
+@import url("https://fonts.googleapis.com/css2?family=Castoro&display=swap");
+
+.mainCharacters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(rgb(189, 177, 177), white);
+
+  &__card {
+    background: linear-gradient(rgb(189, 177, 177), white);
+    margin: vars.$gutter;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Castoro', sans-serif;
+    &__title {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    &__content {
+      font-size: 1.2em;
+    }
+    &__image{
+      width: 15rem;
+      margin: auto;
+      border-radius: 30px;
+    }
+  }
+}
