@@ -8,6 +8,7 @@ import MainCharacters from 'src/components/MainCharacters';
 // et renvoie des props que l'on veut récupérer depuis le state
 const mapStateToProps = (state) => ({
   mainCharacters: state.mainCharacters.mainCharacters,
+  loading: state.mainCharacters.loading,
 });
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher une action vers le store

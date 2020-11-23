@@ -1,10 +1,10 @@
 import React, { useEffect }  from 'react';
 import PropTypes from 'prop-types';
-import { CardGroup, Card } from 'react-bootstrap';
+import { Card, Spinner } from 'react-bootstrap';
 
 import './mainCharacters.scss';
 
-const MainCharacters = ({ mainCharacters, launchFetchMainCharacters }) => {
+const MainCharacters = ({ mainCharacters, loading, launchFetchMainCharacters }) => {
   useEffect(() => {
     console.log('useEffect App');
     // ici je voudrais dispatch une action au store pour que le middleware la
@@ -16,6 +16,13 @@ const MainCharacters = ({ mainCharacters, launchFetchMainCharacters }) => {
 
   return (
     <div className="mainCharacters">
+      {loading && (
+      <div className="loading">
+        Loading...
+        <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
+      </div>
+      )
+      }
       {mainCharacters.map((mainCharacter) => (
         <Card key={mainCharacter.name} className="mainCharacters__card" style={{ width: '20rem' }}>
           <Card.Img variant="top" className="mainCharacters__card__image" src={mainCharacter.image} />
@@ -32,9 +39,11 @@ const MainCharacters = ({ mainCharacters, launchFetchMainCharacters }) => {
 };
 
 MainCharacters.propTypes = {
+  launchFetchMainCharacters: PropTypes.func.isRequired,
   mainCharacters: PropTypes.arrayOf( // un tableau de...
     PropTypes.shape({
       name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
