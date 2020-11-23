@@ -20,7 +20,7 @@ const Home = () => (
         <Card.Text className="home__card__content">
           This project use the <a className="firstDiv__content__link" href="https://hp-api.herokuapp.com/">HP API</a>.
           I made this to practice coding and apply new concepts seen during my formation
-          especially React.
+          especially React and Redux.
         </Card.Text>
       </Card.Body>
     </Card>

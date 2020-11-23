@@ -1,21 +1,21 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Spinner } from 'react-bootstrap';
 
-import './mainCharacters.scss';
+import './slytherin.scss';
 
-const MainCharacters = ({ mainCharacters, loading, launchFetchMainCharacters }) => {
+const Slytherin = ({ slytherinCharacters, loading, launchFetchSlytherinCharacters }) => {
   useEffect(() => {
     console.log('useEffect App');
     // ici je voudrais dispatch une action au store pour que le middleware la
     // traite. Mais je n'ai pas accès directement à store.dispatch() => il faut que
     // je prépare le dispatch de l'action dans le container du composant, et la
     // callback correspondante est fournir en prop au composant de présentation
-    launchFetchMainCharacters();
+    launchFetchSlytherinCharacters();
   }, []);
 
   return (
-    <div className="mainCharacters">
+    <div className="slytherin">
       {loading && (
       <div className="loading">
         Loading...
@@ -23,13 +23,13 @@ const MainCharacters = ({ mainCharacters, loading, launchFetchMainCharacters }) 
       </div>
       )
       }
-      {mainCharacters.map((mainCharacter) => (
-        <Card key={mainCharacter.name} className="mainCharacters__card" style={{ width: '20rem' }}>
-          <Card.Img variant="top" className="mainCharacters__card__image" src={mainCharacter.image} />
+      {slytherinCharacters.map((character) => (
+        <Card key={character.name} className="slytherin__card" style={{ width: '20rem' }}>
+          <Card.Img variant="top" className="slytherin__card__image" src={character.image} />
           <Card.Body>
-            <Card.Title className="mainCharacters__card__title">{mainCharacter.name}</Card.Title>
-            <Card.Text className="mainCharacters__card__content">
-              <span className="mainCharacters__card__content__span">House :</span> {mainCharacter.house}
+            <Card.Title className="slytherin__card__title">{character.name}</Card.Title>
+            <Card.Text className="slytherin__card__content">
+              <span className="slytherin__card__content__span">Year of birth :</span> {character.yearOfBirth}
             </Card.Text>
           </Card.Body>
         </Card>
@@ -38,15 +38,16 @@ const MainCharacters = ({ mainCharacters, loading, launchFetchMainCharacters }) 
   );
 };
 
-MainCharacters.propTypes = {
-  launchFetchMainCharacters: PropTypes.func.isRequired,
+Slytherin.propTypes = {
+  launchFetchSlytherinCharacters: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  mainCharacters: PropTypes.arrayOf( // un tableau de...
+  slytherinCharacters: PropTypes.arrayOf( // un tableau de...
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
+      yearOfBirth: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };
 
-export default MainCharacters;
+export default Slytherin;

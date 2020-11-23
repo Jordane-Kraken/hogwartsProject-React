@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 // on importe tous les reducers
 import mainCharactersReducer from './mainCharacters';
+import gryffindorReducer from './gryffindor';
+import slytherinReducer from './slytherin';
 
 // etc
 // le reducer principal, qui regroupe les autres
@@ -8,6 +10,8 @@ import mainCharactersReducer from './mainCharacters';
 // chaque reducer
 const rootReducer = combineReducers({
   mainCharacters: mainCharactersReducer,
+  gryffindor: gryffindorReducer,
+  slytherin: slytherinReducer,
   // etc
 });
 export default rootReducer;
