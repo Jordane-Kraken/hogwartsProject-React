@@ -1,0 +1,36 @@
+@use '../../../styles/vars';
+@import url("https://fonts.googleapis.com/css2?family=Castoro&display=swap");
+
+.ravenclaw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__card {
+    background-image: url(../../../assets/images/ravenclaw.jpg);
+    margin: vars.$gutter;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Castoro', sans-serif;
+    &__title {
+      font-weight: bold;
+      font-size: 1.5em;
+      padding: 0.2em;
+      border-radius: 30px;
+      color: black;
+      background-color: white;
+    }
+    &__content {
+      font-size: 1.2em;
+      padding: 0.2em;
+      border-radius: 30px;
+      color: black;
+      background-color: white;
+
+      &__span {
+        text-decoration: underline;
+      }
+    }
+  }
+}

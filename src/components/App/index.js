@@ -7,6 +7,8 @@ import Home from 'src/components/Home';
 import ConnectedMainCharacters from 'src/containers/MainCharacters';
 import ConnectedGryffindor from 'src/containers/Gryffindor';
 import ConnectedSlytherin from 'src/containers/Slytherin';
+import ConnectedHufflepuff from 'src/containers/Hufflepuff';
+import ConnectedRavenclaw from 'src/containers/Ravenclaw';
 import Houses from 'src/components/Houses';
 
 // == Import
@@ -38,6 +40,16 @@ const App = () => (
     <Route exact path="/characters/slytherin">
       <Page>
         <ConnectedSlytherin />
+      </Page>
+    </Route>
+    <Route exact path="/characters/hufflepuff">
+      <Page>
+        <ConnectedHufflepuff />
+      </Page>
+    </Route>
+    <Route exact path="/characters/ravenclaw">
+      <Page>
+        <ConnectedRavenclaw />
       </Page>
     </Route>
   </Switch>
