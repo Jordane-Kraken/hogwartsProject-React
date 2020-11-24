@@ -4,21 +4,25 @@
 
 .home {
   font-family:'Castoro', 'sans-serif';
-  display: flex;
-  justify-content: center;
-
+  
   &__card{
-    border: none;
-    &__img {
-      border-radius: 30px;
-    }
+    border-radius: 50px;
+    background-image: url(../../assets/images/hogwartsWallpaper.jpg);
+    background-size: cover;
+    margin: vars.$gutter;
+    position: absolute;
+
     &__title{
       text-align: center;
        font-size: 1.7em;
+       color: white;
     }
     &__content{
       text-align: center;
       font-size: 1.3em;
+      color: white;
     }
   }
 }
+
+

@@ -5,16 +5,13 @@ import { Card } from 'react-bootstrap';
 // == Import
 import './home.scss';
 import logoHogwarts from '../../assets/images/hogwarts-7935.png';
-import harry from '../../assets/images/harry.webp';
+import hogwarts from '../../assets/images/wallpaperHogwarts.jpg';
 
 // == Composant
 const Home = () => (
   <div className="home">
-    <Card className="home__card" style={{ width: '50rem' }}>
-      <Card.Img className="home__card__img" variant="top" src={harry} alt="harryPotter" />
-    </Card>
-    <Card className="home__card" style={{ width: '23rem' }}>
-      <Card.Img className="home__card__img" variant="top" src={logoHogwarts} alt="logoHogwarts" />
+    <Card className="home__card">
+      <Card.Img className="home__card__img" style={{ width: '30%' , position: 'relative', left: '10%' }} variant="top" src={logoHogwarts} alt="logoHogwarts" />
       <Card.Body>
         <Card.Title className="home__card__title">* Welcome to the magical world of... Hogwarts *</Card.Title>
         <Card.Text className="home__card__content">
