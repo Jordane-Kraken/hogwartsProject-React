@@ -21,8 +21,7 @@ const Gryffindor = ({ gryffindorCharacters, loading, launchFetchGryffindorCharac
         Loading...
         <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
       </div>
-      )
-      }
+      )}
       {gryffindorCharacters.map((character) => (
         <Card key={character.name} className="gryffindor__card" style={{ width: '20rem' }}>
           <Card.Img variant="top" className="gryffindor__card__image" src={character.image} />
