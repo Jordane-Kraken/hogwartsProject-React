@@ -15,26 +15,28 @@ const Slytherin = ({ slytherinCharacters, loading, launchFetchSlytherinCharacter
   }, []);
 
   return (
-    <div className="slytherin">
-      {loading && (
-      <div className="loading">
-        Loading...
-        <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
+    <>
+      <h2 className="title">Slytherin</h2>
+      <div className="slytherin">
+        {loading && (
+        <div className="loading">
+          Loading...
+          <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
+        </div>
+        )}
+        {slytherinCharacters.map((character) => (
+          <Card key={character.name} className="slytherin__card" style={{ width: '20rem' }}>
+            <Card.Img variant="top" className="slytherin__card__image" src={character.image} />
+            <Card.Body>
+              <Card.Title className="slytherin__card__title">{character.name}</Card.Title>
+              <Card.Text className="slytherin__card__content">
+                <span className="slytherin__card__content__span">Year of birth :</span> {character.yearOfBirth}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        ))}
       </div>
-      )
-      }
-      {slytherinCharacters.map((character) => (
-        <Card key={character.name} className="slytherin__card" style={{ width: '20rem' }}>
-          <Card.Img variant="top" className="slytherin__card__image" src={character.image} />
-          <Card.Body>
-            <Card.Title className="slytherin__card__title">{character.name}</Card.Title>
-            <Card.Text className="slytherin__card__content">
-              <span className="slytherin__card__content__span">Year of birth :</span> {character.yearOfBirth}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      ))}
-    </div>
+    </>
   );
 };
 

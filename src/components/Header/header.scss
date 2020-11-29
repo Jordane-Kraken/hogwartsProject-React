@@ -9,6 +9,13 @@
       font-size: 1.7em;
       font-family: 'Castoro', sans-serif;
       display: block;
+      color: black;
+      &:hover {
+        color: rgb(230, 141, 59);
+      }
+      &--active {
+        color:  rgb(230, 141, 59);
+      }
     }
 }
 

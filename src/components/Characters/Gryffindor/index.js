@@ -15,25 +15,28 @@ const Gryffindor = ({ gryffindorCharacters, loading, launchFetchGryffindorCharac
   }, []);
 
   return (
-    <div className="gryffindor">
-      {loading && (
-      <div className="loading">
-        Loading...
-        <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
+    <>
+      <h2 className="title">Gryffindor</h2>
+      <div className="gryffindor">
+        {loading && (
+        <div className="loading">
+          Loading...
+          <Spinner style={{ width: '5rem', margin: 'auto' }} animation="grow" />
+        </div>
+        )}
+        {gryffindorCharacters.map((character) => (
+          <Card key={character.name} className="gryffindor__card" style={{ width: '20rem' }}>
+            <Card.Img variant="top" className="gryffindor__card__image" src={character.image} />
+            <Card.Body>
+              <Card.Title className="gryffindor__card__title">{character.name}</Card.Title>
+              <Card.Text className="gryffindor__card__content">
+                <span className="gryffindor__card__content__span">Year of birth :</span> {character.yearOfBirth}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        ))}
       </div>
-      )}
-      {gryffindorCharacters.map((character) => (
-        <Card key={character.name} className="gryffindor__card" style={{ width: '20rem' }}>
-          <Card.Img variant="top" className="gryffindor__card__image" src={character.image} />
-          <Card.Body>
-            <Card.Title className="gryffindor__card__title">{character.name}</Card.Title>
-            <Card.Text className="gryffindor__card__content">
-              <span className="gryffindor__card__content__span">Year of birth :</span> {character.yearOfBirth}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      ))}
-    </div>
+    </>
   );
 };
 
