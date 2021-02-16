@@ -1,21 +1,17 @@
 @use '../../styles/vars';
 @import url("https://fonts.googleapis.com/css2?family=Castoro&display=swap");
 
-
 .home {
   font-family:'Castoro', 'sans-serif';
-  
+  background-image: url(../../assets/images/hogwartsWallpaper.jpg);
+  height: 100vh;
+  background-size: cover;
   &__card{
-    border-radius: 50px;
-    background-image: url(../../assets/images/hogwartsWallpaper.jpg);
-    background-size: cover;
-    margin: vars.$gutter;
-    position: absolute;
-
     &__title{
       text-align: center;
        font-size: 2em;
        color: white;
+      padding: vars.$gutter;
     }
     &__content{
       text-align: center;

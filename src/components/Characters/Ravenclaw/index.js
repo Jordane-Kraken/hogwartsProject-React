@@ -47,7 +47,7 @@ Ravenclaw.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      yearOfBirth: PropTypes.string.isRequired,
+      yearOfBirth: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };

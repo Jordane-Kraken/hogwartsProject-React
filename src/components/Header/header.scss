@@ -3,8 +3,6 @@
 
 .nav {
     background: linear-gradient(rgb(189, 177, 177), white);
-    border-radius: 1em;
-    margin: vars.$gutter;
     &__item {
       font-size: 1.7em;
       font-family: 'Castoro', sans-serif;
@@ -17,6 +15,10 @@
         color:  rgb(230, 141, 59);
       }
     }
+}
+
+.navbar-collapse {
+  justify-content: space-between;
 }
 
 #basic-nav-dropdown {
